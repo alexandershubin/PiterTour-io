@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
-  const btnForm = document.querySelector('.button__form');
   const inputPassword = document.querySelector('.form__input--password');
   const inputEmail = document.querySelector('.form__input--email');
   const key = 'keys';
@@ -21,8 +20,7 @@ window.addEventListener('DOMContentLoaded', function () {
   const checkValidate = () => {
     inputEmail.addEventListener('input', (e) => {
       if (validateEmail(inputEmail.value) === true) {
-        inputPassword.removeAttribute('disabled')
-        btnForm.removeAttribute('disabled')
+        inputPassword.removeAttribute('disabled');
 
         if (isStorageSupport) {
           localStorage.setItem(key, inputEmail.value);
@@ -35,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function () {
     if (storage) {
       inputEmail.value = storage;
       inputPassword.removeAttribute('disabled')
-      btnForm.removeAttribute('disabled')
     }
   }
 
