@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Описание страницы сайта.">
+  <title>ПитерТур</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<main class="main">
+  <div class="container">
+    <section class="main__block">
+      <div class="welcome">
+        <div class="welcome__content">
+          <h2 class="title title--white">Welcome Page</h2>
+          <p class="description">Sign in to continue access pages</p>
+        </div>
+      </div>
+      <div class="login">
+        <div class="login__background">
+          <div class="login__form">
+            <h2 class="title title--black">Sign In</h2>
+            <p class="login__description">Sign in to continue access pages</p>
+            <form class="form" action="#" method="post">
+              <label class="form__label" for="email">
+                <input class="form__input form__input--email" type="email" id="email" placeholder="Email Address" required="">
+              </label>
+              <label class="form__label" for="password">
+                <input class="form__input form__input--password" type="password" id="password" placeholder="Password" required="" disabled="">
+              </label>
+              <button class="button button__form" type="submit" disabled="">CONTINUE</button>
+            </form>
+            <span class="login__span">or Connect with Social Media</span>
+            <div class="wrap-button">
+              <a class="button button__link button__link--twitter" href="#">Sign In With Twitter</a>
+            </div>
+            <div class="wrap-button">
+              <a class="button button__link button__link--facebook" href="#">Sign In With Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
