@@ -1,9 +1,8 @@
-(function () {
-  const $slide = $('.questionnaire');
-  const $btn = $('.btn-next');
-  let count = 1;
-  let inputLogin = $('.form__input').eq(0);
-  const key ='keys';
+window.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  const inputPassword = document.querySelector('.form__input--password');
+  const inputEmail = document.querySelector('.form__input--email');
+  const key = 'keys';
   let isStorageSupport = true;
   let storage = "";
 
@@ -13,38 +12,30 @@
     isStorageSupport = false;
   }
 
-  const handleChange = function () {
-    inputLogin.on('change', function (e) {
-      let value = $(this).val();
-      if (isStorageSupport) {
-        localStorage.setItem(key, value);
+  const validateEmail = (email) => {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  const checkValidate = () => {
+    inputEmail.addEventListener('input', (e) => {
+      if (validateEmail(inputEmail.value) === true) {
+        inputPassword.removeAttribute('disabled');
+
+        if (isStorageSupport) {
+          localStorage.setItem(key, inputEmail.value);
+        }
       }
     })
   }
 
-  if (storage) {
-    inputLogin.val(storage);
+  const checkStorage = () => {
+    if (storage) {
+      inputEmail.value = storage;
+      inputPassword.removeAttribute('disabled')
+    }
   }
 
-  const initSlide = () => {
-    $slide.hide()
-    $slide.eq(0).show();
-    clickBtn()
-  }
-
-  const clickBtn = () => {
-    $btn.on('click', (e) => {
-      handleChange()
-      nextSlide()
-    })
-  }
-
-  const nextSlide = () => {
-    $slide.fadeOut(1000)
-    $slide.eq(count).fadeIn(1000)
-    count++
-  }
-
-  initSlide()
-  handleChange()
-})()
+  checkValidate()
+  checkStorage()
+});
