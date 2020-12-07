@@ -455,7 +455,8 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   .main__block {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(1.75%, #6ED4FF), color-stop(95.51%, #8FFFA3));
     background: linear-gradient(360deg, #6ED4FF 1.75%, #8FFFA3 95.51%);
