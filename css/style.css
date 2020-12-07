@@ -455,8 +455,7 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  margin: 20px 0; }
+  height: 100vh; }
   .main__block {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(1.75%, #6ED4FF), color-stop(95.51%, #8FFFA3));
     background: linear-gradient(360deg, #6ED4FF 1.75%, #8FFFA3 95.51%);
@@ -687,10 +686,6 @@ ul {
 
 .button__form:disabled {
   opacity: 0.4; }
-
-@media (min-width: 1441px) {
-  .main {
-    height: 100vh; } }
 
 .container {
   width: 100%;
